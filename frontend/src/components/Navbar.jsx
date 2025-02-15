@@ -57,6 +57,11 @@ const Navbar = () => {
           <li className="py-2">Contact</li>
           <hr className="border-none h-0.5 bg-primary w-3/5  m-auto hidden" />
         </NavLink>
+
+        <NavLink to="/https://doctors-portal-admin.onrender.com">
+          <li className="py-2">Admin</li>
+          <hr className="border-none h-0.5 bg-primary w-3/5  m-auto hidden" />
+        </NavLink>
       </ul>
       <div className="flex items-center gap-4">
         <DropdownMenu>
