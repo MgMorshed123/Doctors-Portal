@@ -4,7 +4,7 @@ import { AdminContext } from "../../context/AdminContext";
 import { useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import Appointments from "../../../../frontend/src/pages/Appointments";
+// import Appointments from "../../../../frontend/src/pages/Appointments";
 // import { assets } from "../../../../frontend/src/assets/assets_frontend/assets";
 import { assets } from "../../assets/assets_admin/assets";
 import { useThemeStore } from "@/context/useThems";
