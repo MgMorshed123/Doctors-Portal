@@ -4,11 +4,12 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const MyAppointments = () => {
-  const { token, backendUrl, getDoctorsData } = useContext(AppContext);
+  const { token, backendUrl, getDoctorsData, userData } =
+    useContext(AppContext);
 
   const [appointments, setAppointments] = useState([]);
 
-  console.log("appointments", appointments);
+  // console.log("appointments", appointments);
 
   // months
 
@@ -40,7 +41,7 @@ const MyAppointments = () => {
   const getUserAppointments = async () => {
     try {
       const { data } = await axios.get(
-        backendUrl + "/api/user/list-appointment",
+        `${backendUrl}/api/user/list-appointment?userId=${userData._id}`,
         { headers: { token } }
       );
 
