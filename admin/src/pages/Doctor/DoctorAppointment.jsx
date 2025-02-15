@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { DoctorContext } from "../../context/DoctorContext";
 import { assets } from "../../assets/assets_admin/assets";
 import { useThemeStore } from "@/context/useThems";
+// doctors
 
 const DoctorAppointment = () => {
   const {
