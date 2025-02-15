@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DoctorContext } from "../../context/DoctorContext";
-import { AppContext } from "../../../../frontend/src/context/AppContext";
+// import { AppContext } from "../../../../frontend/src/context/AppContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useThemeStore } from "@/context/useThems";
