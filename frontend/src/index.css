@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Outfit, sans-serif;
+}
+
+.active hr {
+  @apply block;
+}
+
+::-webkit-scrollbar {
+  @apply hidden;
+}
+
+/* Light mode button styles */
+.light button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.light button:hover {
+  background-color: gray;
+  color: white;
+}
+
+/* Dark mode button styles */
+.dark button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark button:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+/* Light theme background */
+.light {
+  background-color: white;
+}
+
+/* Dark theme background */
+.dark {
+  background-color: #000000;
+  color: white;
+}
+
+/* Global body settings */
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --primary: #333;
+    --primary-foreground: #fff;
+    --secondary: #f1f1f1;
+    --muted: #ddd;
+    --accent: #ff6347;
+    --border: #eaeaea;
+  }
+
+  .dark {
+    --background: #333;
+    --foreground: #ffffff;
+    --primary: #1a1a1a;
+    --primary-foreground: #f1f1f1;
+    --secondary: #444;
+    --muted: #555;
+    --accent: #ff6347;
+    --border: #444;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)];
+  }
+
+  .light {
+    background-color: var(--background);
+  }
+
+  .dark {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  button {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  /* Optional: handle active states */
+  .active {
+    @apply text-white bg-primary;
+  }
+}
+
+@keyframes borderColorAnimation {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: blue;
+  }
+  100% {
+    border-color: purple;
+  }
+}
+
+.animate-borderColor {
+  animation: borderColorAnimation 2s infinite;
+}
+
