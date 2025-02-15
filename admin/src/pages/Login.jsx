@@ -23,7 +23,7 @@ const Login = () => {
     try {
       if (state === "Admin") {
         const { data } = await axios.post(
-          "http://localhost:4000/api/admin/login",
+          "https://doctor-for-u-backend.onrender.com/api/admin/login",
           {
             email,
             password,
@@ -44,7 +44,7 @@ const Login = () => {
       } else {
         // Backend returned a failure response
         const { data } = await axios.post(
-          "http://localhost:4000/api/doctor/doctor-login",
+          "https://doctor-for-u-backend.onrender.com/api/doctor/doctor-login",
           {
             email,
             password,

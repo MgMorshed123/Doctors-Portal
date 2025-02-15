@@ -8,7 +8,7 @@ export const DoctorContext = createContext();
 
 const DoctorContextProvider = (props) => {
   const [dToken, setDToken] = useState(localStorage.getItem("dToken"));
-  const backendUrl = "http://localhost:4000";
+  const backendUrl = "https://doctor-for-u-backend.onrender.com";
 
   const [appointments, setAppointments] = useState([]);
 

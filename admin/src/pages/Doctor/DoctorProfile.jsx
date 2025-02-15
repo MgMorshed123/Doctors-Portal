@@ -9,7 +9,7 @@ const DoctorProfile = () => {
   const { dToken, profileData, setProfileData, getProfileData } =
     useContext(DoctorContext);
 
-  const backendUrl = "http://localhost:4000";
+  const backendUrl = "https://doctor-for-u-backend.onrender.com";
   const [isEdit, setIsEdit] = useState(false);
   const { theme } = useThemeStore();
 

@@ -24,7 +24,7 @@ const Login = () => {
       if (state === "Sign Up") {
         // Wait for the response to be fully returned
         const response = await axios.post(
-          "http://localhost:4000/api/user/register",
+          "https://doctor-for-u-backend.onrender.com/api/user/register",
           {
             name,
             password,
@@ -47,7 +47,7 @@ const Login = () => {
       } else {
         // Wait for the response to be fully returned
         const response = await axios.post(
-          "http://localhost:4000/api/user/login",
+          "https://doctor-for-u-backend.onrender.com/api/user/login",
           {
             email,
             password,
