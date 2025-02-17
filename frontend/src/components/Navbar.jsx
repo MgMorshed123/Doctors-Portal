@@ -133,7 +133,7 @@ const Navbar = () => {
 
         <img
           onClick={() => setShowMenu(true)}
-          className="w-6 md:hidden ml-7"
+          className="w-6 md:hidden mr-7"
           src={assets.menu_icon}
           alt=""
           srcset=""

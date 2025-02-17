@@ -174,7 +174,12 @@ const Appointments = () => {
                 srcSet=""
               />
             </p>
-            <div className="flex items-center gap-2 text-sm mt-1 text-gray-600">
+            <div
+              className={`flex items-center gap-2 text-sm mt-1 ${
+                theme === "dark" ? "text-white" : "text-gray-600"
+              }`}
+            >
+              {" "}
               <p>
                 {docInfo.degree} - {docInfo.speciality}
               </p>
@@ -183,14 +188,26 @@ const Appointments = () => {
               </button>
             </div>
             <div>
-              <p className="flex items-center gap-1 text-sm font-medium text-gray-900 mt-3">
+              <p
+                className={`flex items-center gap-1 text-sm font-medium mt-3 ${
+                  theme === "dark" ? "text-white" : "text-gray-900"
+                }`}
+              >
                 About <img src={assets.info_icon} alt="" srcSet="" />
               </p>
-              <p className="text-sm text-gray-500 max-w-[700px] mt-1">
+              <p
+                className={`text-sm max-w-[700px] mt-1 ${
+                  theme === "dark" ? "text-white" : "text-gray-500"
+                }`}
+              >
                 {docInfo.about}
               </p>
             </div>
-            <p className="text-gray-500 font-medium mt-4 ">
+            <p
+              className={`text-sm font-medium mt-4 ${
+                theme === "dark" ? "text-white" : "text-gray-500"
+              }`}
+            >
               Appointment Fee :{" "}
               <span className="text-gray-600">
                 {currencySymbol} - {docInfo.fees}
@@ -198,7 +215,11 @@ const Appointments = () => {
             </p>
           </div>
         </div>
-        <div className="sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700">
+        <div
+          className={`sm:ml-72 sm:pl-4 mt-4 font-medium ${
+            theme === "dark" ? "text-white" : "text-gray-700"
+          }`}
+        >
           <p>Booking Slots</p>
           <div className="flex gap-3 items-center w-full mt-4">
             <div className="flex gap-3 items-center w-full overflow-x-auto mt-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
