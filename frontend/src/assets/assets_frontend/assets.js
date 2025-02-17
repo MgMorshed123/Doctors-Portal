@@ -14,6 +14,7 @@ import chats_icon from "./chats_icon.svg";
 import verified_icon from "./verified_icon.svg";
 import arrow_icon from "./arrow_icon.svg";
 import info_icon from "./info_icon.svg";
+import LOGO from "./LOGO.png";
 import upload_icon from "./upload_icon.png";
 import stripe_logo from "./stripe_logo.png";
 import razorpay_logo from "./razorpay_logo.png";
@@ -38,6 +39,7 @@ import General_physician from "./General_physician.svg";
 import Gynecologist from "./Gynecologist.svg";
 import Neurologist from "./Neurologist.svg";
 import Pediatricians from "./Pediatricians.svg";
+import { Import } from "lucide-react";
 
 export const assets = {
   appointment_img,
@@ -45,6 +47,7 @@ export const assets = {
   group_profiles,
   logo,
   logo2,
+  LOGO,
   DOCTOSB4U,
   chats_icon,
   verified_icon,

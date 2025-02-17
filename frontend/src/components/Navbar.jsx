@@ -35,7 +35,7 @@ const Navbar = () => {
         <img
           to="/"
           className="w-40 h-16 cursor-pointer "
-          src={assets.DOCTOSB4U}
+          src={assets.LOGO}
           alt=""
           srcset=""
         />
