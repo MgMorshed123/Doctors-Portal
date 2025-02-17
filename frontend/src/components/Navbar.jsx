@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex justify-between items-center text-sm py-4 border-b border-gray-400 ${
+      className={`flex justify-between items-center text-sm py-4 border-b   border-gray-400 ml-4 mr-4 ${
         theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
@@ -89,7 +89,7 @@ const Navbar = () => {
         {token && userData ? (
           <div className="flex items-center gap-2 cursor-pointer group relative">
             <img
-              className="w-8 rounded-full"
+              className="w-10 h-10 rounded-full"
               src={userData?.image}
               alt=""
               srcset=""
@@ -100,6 +100,7 @@ const Navbar = () => {
               alt=""
               srcset=""
             />
+
             <div className="absolute top-0 right-0 pt-16 text-base font-medium  text-gray-600 hidden group-hover:block">
               <div className="min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4">
                 <p
