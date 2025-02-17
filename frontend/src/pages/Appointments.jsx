@@ -6,6 +6,7 @@ import RelatedDoctor from "../components/RelatedDoctor";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
+import { useThemeStore } from "@/context/useThems";
 
 const Appointments = () => {
   const { docId } = useParams();
@@ -22,6 +23,7 @@ const Appointments = () => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [slotTime, setSlotTime] = useState(0);
 
+  const { theme } = useThemeStore();
   const fetchDocInfo = async () => {
     const docInfo = doctors.find((doc) => doc._id === docId);
     setDocInfo(docInfo);
@@ -156,7 +158,13 @@ const Appointments = () => {
             />
           </div>
 
-          <div className="flex-1 border border-gray-400 rounded-lg p-8 py-7 bg-white mx-2 sm:mx-0 mt-[-80px] sm:mt-0">
+          <div
+            className={`flex-1 border border-gray-400 rounded-lg p-8 py-7 mx-2 sm:mx-0 mt-[-80px] sm:mt-0 ${
+              theme === "dark"
+                ? "bg-black text-white"
+                : "bg-white text-gray-800"
+            }`}
+          >
             <p className="flex items-center gap-2 text-2xl font-medium">
               {docInfo.name}{" "}
               <img

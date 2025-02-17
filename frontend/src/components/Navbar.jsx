@@ -34,7 +34,7 @@ const Navbar = () => {
       <NavLink to="/">
         <img
           to="/"
-          className="w-40 h-16 cursor-pointer "
+          className="w-40 h-16 cursor-pointer  bg-black"
           src={assets.LOGO}
           alt=""
           srcset=""
@@ -133,12 +133,12 @@ const Navbar = () => {
 
         <img
           onClick={() => setShowMenu(true)}
-          className="w-6 md:hidden"
+          className="w-6 md:hidden ml-7"
           src={assets.menu_icon}
           alt=""
           srcset=""
         />
-        {/* obile menu */}
+        {/*mobile menu */}
         <div
           className={` ${
             showMenu ? "fixed w-full " : "h-0 w-0"
