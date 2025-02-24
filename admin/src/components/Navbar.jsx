@@ -44,7 +44,11 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center text-sm">
-        <img className="w-36 sm:w-40 cursor-pointer" src={assets.LOGO} alt="" />
+        <img
+          className="w-12 sm:w-10 md:w-20 cursor-pointer"
+          src={assets.LOGO}
+          alt=""
+        />
         <p
           className={`border py-0.5 rounded-full ${
             theme === "dark" ? "text-white" : "text-gray-600"
