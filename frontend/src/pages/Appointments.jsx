@@ -249,9 +249,9 @@ const Appointments = () => {
                 <p
                   onClick={() => setSlotTime(slot.time)} // Set the selected slot time
                   key={index}
-                  className={`text-sm font-light px-5 py-2 rounded-full cursor-pointer ${
+                  className={`text-sm font-light px-5 text-gray-500 py-2 rounded-full cursor-pointer ${
                     slot.time === slotTime
-                      ? "bg-blue-500 text-white"
+                      ? "bg-blue-500 text-gray-700"
                       : "bg-gray-200"
                   }`}
                 >

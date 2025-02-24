@@ -260,8 +260,9 @@ const AddDoctor = () => {
           <textarea
             onChange={(e) => setAbout(e.target.value)}
             value={about}
-            className="w-full px-4 pt-2 border rounded "
+            className="w-full px-4 pt-2 border text-gray-400 rounded "
             name=""
+            type="text"
             placeholder="Write About Doctor"
             rows={5}
             id=""

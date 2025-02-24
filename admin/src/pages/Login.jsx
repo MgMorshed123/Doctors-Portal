@@ -30,7 +30,6 @@ const Login = () => {
           }
         );
 
-        console.log(data);
         if (data.success) {
           localStorage.setItem("atoken", data.token);
           setatoken(data.token);
@@ -39,6 +38,12 @@ const Login = () => {
           Swal.fire({
             title: "Login Successful",
             icon: "success",
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "Invalid Credentials !",
+            icon: "error",
           });
         }
       } else {

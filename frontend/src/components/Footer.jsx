@@ -7,8 +7,8 @@ const Footer = () => {
     <div className="md:mx-10">
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14  my-10 mt-40 text-sm">
         {/* left */}
-        <div className="">
-          <img src={assets.LOGO} className="mb-5 w-30 h-30" alt="" srcset="" />
+        <div className="w-[290px] h-[270px]">
+          <img src={assets.LOGO} className="mb-5 w-10 h-10" alt="" srcset="" />
           <p className="w-full md:w-2/3  leading-6">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim in
             facilis officiis tenetur magni consequatur.
