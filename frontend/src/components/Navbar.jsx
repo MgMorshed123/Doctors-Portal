@@ -147,12 +147,14 @@ const Navbar = () => {
         />
         {/*mobile menu */}
         <div
-          className={` ${
-            showMenu ? "fixed w-full " : "h-0 w-0"
-          }  md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all `}
+          className={`${
+            showMenu ? "fixed w-full" : "h-0 w-0"
+          } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden transition-all ${
+            theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+          } min-w-48 rounded flex flex-col gap-4 p-4`}
         >
           <div className="flex items-center justify-between px-5 py-6">
-            <img className="w-36" src={assets.DOCTOSB4U} alt="" />
+            <img className="w-36" src={assets.LOGO} alt="" />
             <img
               className="w-7"
               onClick={() => setShowMenu(false)}
