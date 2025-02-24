@@ -40,7 +40,7 @@ const Navbar = () => {
           srcset=""
         />
       </NavLink>
-      <ul className="hidded  md:flex items-start gap-5 font-medium ">
+      <ul className="hidden  md:flex items-start gap-5 font-medium ">
         <NavLink to="/">
           <li className="py-2">Home</li>
           <hr className="border-none h-0.5 bg-primary w-3/5  m-auto hidden" />
@@ -102,7 +102,13 @@ const Navbar = () => {
             />
 
             <div className="absolute top-0 right-0 pt-16 text-base font-medium  text-gray-600 hidden group-hover:block">
-              <div className="min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4">
+              <div
+                className={`min-w-48 rounded flex flex-col gap-4 p-4 ${
+                  theme === "dark"
+                    ? "bg-black text-white"
+                    : "bg-white text-black"
+                }`}
+              >
                 <p
                   onClick={() => navigate("/my-profile")}
                   className="hover:text-black cursor-pointer"
@@ -146,7 +152,7 @@ const Navbar = () => {
           }  md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all `}
         >
           <div className="flex items-center justify-between px-5 py-6">
-            <img className="w-36" src={assets.logo} alt="" />
+            <img className="w-36" src={assets.DOCTOSB4U} alt="" />
             <img
               className="w-7"
               onClick={() => setShowMenu(false)}
