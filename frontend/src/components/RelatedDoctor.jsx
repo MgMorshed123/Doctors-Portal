@@ -57,7 +57,7 @@ const RelatedDoctor = ({ speciality, docId }) => {
                 key={index}
               >
                 <img
-                  className="bg-blue-50 w-300 h-300"
+                  className="bg-blue-50 w-[300px] h-[300px]"
                   src={item.image}
                   alt=""
                   srcset=""

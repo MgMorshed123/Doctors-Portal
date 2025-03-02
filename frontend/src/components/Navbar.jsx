@@ -147,48 +147,41 @@ const Navbar = () => {
         />
         {/*mobile menu */}
         <div
-          className={`${
-            showMenu ? "fixed w-full" : "h-0 w-0"
-          } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden transition-all ${
+          className={`fixed inset-0 z-20 transition-transform duration-300 transform ${
+            showMenu ? "translate-x-0" : "translate-x-full"
+          } md:hidden ${
             theme === "dark" ? "bg-black text-white" : "bg-white text-black"
           } min-w-48 rounded flex flex-col gap-4 p-4`}
         >
+          {/* Header */}
           <div className="flex items-center justify-between px-5 py-6">
-            <img className="w-36" src={assets.LOGO} alt="" />
+            <img className="w-36" src={assets.LOGO} alt="Logo" />
             <img
-              className="w-7"
+              className="w-7 cursor-pointer"
               onClick={() => setShowMenu(false)}
               src={assets.cross_icon}
-              alt=""
+              alt="Close"
             />
           </div>
+
+          {/* Navigation Links */}
           <ul className="flex flex-col items-center gap-2 mt-3 text-lg font-medium">
-            <NavLink onClick={() => setShowMenu(false)} to={`/`}>
-              <p className="px-4 py-2 rounded inline-block"> Home</p>
-            </NavLink>
-            <NavLink
-              className="px-4 py-2 rounded inline-block"
-              onClick={() => setShowMenu(false)}
-              to={`/doctors`}
-            >
-              <p className="px-4 py-2 rounded inline-block"> All Doctors</p>
-            </NavLink>
-            <NavLink
-              className="px-4 py-2 rounded inline-block"
-              onClick={() => setShowMenu(false)}
-              to={`/about`}
-            >
-              <p className="px-4 py-2 rounded inline-block"> About </p>
-            </NavLink>
-            <NavLink
-              className="px-4 py-2 rounded inline-block"
-              onClick={() => setShowMenu(false)}
-              to={`/contact`}
-            >
-              <p className="px-4 py-2 rounded inline-block">Contact</p>
-            </NavLink>
+            {[
+              { name: "Home", path: "/" },
+              { name: "All Doctors", path: "/doctors" },
+              { name: "About", path: "/about" },
+              { name: "Contact", path: "/contact" },
+            ].map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.path}
+                onClick={() => setShowMenu(false)}
+                className="px-4 py-2 rounded inline-block hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              >
+                {item.name}
+              </NavLink>
+            ))}
           </ul>
-          <div></div>
         </div>
       </div>
     </div>
