@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { useThemeStore } from "@/context/useThems";
+// import { useThemeStore } from "@/context/useThems";
 
 const Appointments = () => {
   const { docId } = useParams();
