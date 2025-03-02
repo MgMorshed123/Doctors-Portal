@@ -24,6 +24,9 @@ const Appointments = () => {
   const [slotTime, setSlotTime] = useState(0);
 
   const { theme } = useThemeStore();
+
+  console.log("theme", theme);
+
   const fetchDocInfo = async () => {
     const docInfo = doctors.find((doc) => doc._id === docId);
     setDocInfo(docInfo);
