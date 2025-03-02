@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { doctors } from "../assets/assets_frontend/assets";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
+import { useThemeStore } from "@/context/useThems";
 
 const RelatedDoctor = ({ speciality, docId }) => {
   const { doctors } = useContext(AppContext);
 
   const [relDoc, setRelDoc] = useState([]);
   const navigate = useNavigate();
+
+  const { theme } = useThemeStore();
 
   useEffect(() => {
     if (doctors.length > 0 && speciality) {

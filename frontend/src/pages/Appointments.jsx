@@ -6,8 +6,7 @@ import RelatedDoctor from "../components/RelatedDoctor";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-// import { useThemeStore } from "@/context/useThems";
-// import { useThemeStore } from "@/context/useThems";
+import { useThemeStore } from "@/context/useThems";
 
 const Appointments = () => {
   const { docId } = useParams();
@@ -24,10 +23,7 @@ const Appointments = () => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [slotTime, setSlotTime] = useState(0);
 
-  // const { theme } = useThemeStore();
-
-  // console.log("theme", theme);
-
+  const { theme } = useThemeStore();
   const fetchDocInfo = async () => {
     const docInfo = doctors.find((doc) => doc._id === docId);
     setDocInfo(docInfo);
@@ -163,7 +159,11 @@ const Appointments = () => {
           </div>
 
           <div
-            className={`flex-1 border border-gray-400 rounded-lg p-8 py-7 mx-2 sm:mx-0 mt-[-80px] sm:mt-0`}
+            className={`flex-1 border border-gray-400 rounded-lg p-8 py-7 mx-2 sm:mx-0 mt-[-80px] sm:mt-0 ${
+              theme === "dark"
+                ? "bg-black text-white"
+                : "bg-white text-gray-800"
+            }`}
           >
             <p className="flex items-center gap-2 text-2xl font-medium">
               {docInfo.name}{" "}
@@ -174,7 +174,11 @@ const Appointments = () => {
                 srcSet=""
               />
             </p>
-            <div className={`flex items-center gap-2 text-sm mt-1 `}>
+            <div
+              className={`flex items-center gap-2 text-sm mt-1 ${
+                theme === "dark" ? "text-white" : "text-gray-600"
+              }`}
+            >
               {" "}
               <p>
                 {docInfo.degree} - {docInfo.speciality}
@@ -185,13 +189,25 @@ const Appointments = () => {
             </div>
             <div>
               <p
-                className={`flex items-center gap-1 text-sm font-medium mt-3 `}
+                className={`flex items-center gap-1 text-sm font-medium mt-3 ${
+                  theme === "dark" ? "text-white" : "text-gray-900"
+                }`}
               >
                 About <img src={assets.info_icon} alt="" srcSet="" />
               </p>
-              <p className={`text-sm max-w-[700px] mt-1 `}>{docInfo.about}</p>
+              <p
+                className={`text-sm max-w-[700px] mt-1 ${
+                  theme === "dark" ? "text-white" : "text-gray-500"
+                }`}
+              >
+                {docInfo.about}
+              </p>
             </div>
-            <p className={`text-sm font-medium mt-4`}>
+            <p
+              className={`text-sm font-medium mt-4 ${
+                theme === "dark" ? "text-white" : "text-gray-500"
+              }`}
+            >
               Appointment Fee :{" "}
               <span className="text-gray-600">
                 {currencySymbol} - {docInfo.fees}
@@ -199,7 +215,11 @@ const Appointments = () => {
             </p>
           </div>
         </div>
-        <div className={`sm:ml-72 sm:pl-4 mt-4 font-medium `}>
+        <div
+          className={`sm:ml-72 sm:pl-4 mt-4 font-medium ${
+            theme === "dark" ? "text-white" : "text-gray-700"
+          }`}
+        >
           <p>Booking Slots</p>
           <div className="flex gap-3 items-center w-full mt-4">
             <div className="flex gap-3 items-center w-full overflow-x-auto mt-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
