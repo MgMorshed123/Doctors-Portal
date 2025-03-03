@@ -233,8 +233,10 @@ const Appointments = () => {
                       : "border-gray-200"
                   } `}
                 >
-                  <p>{daysOfWeek[daySlot.date.getDay()]}</p>
-                  <p>
+                  <p className="text-gray-400">
+                    {daysOfWeek[daySlot.date.getDay()]}
+                  </p>
+                  <p className="text-gray-400">
                     {daySlot.date.toLocaleDateString([], { day: "2-digit" })}
                   </p>
                 </div>
