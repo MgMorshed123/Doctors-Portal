@@ -7,7 +7,7 @@ import about_image from "./about_image.png";
 import LOGO from "./LOGO.jpg";
 
 // import DOCTOSB4U from "./DOCTORSB4U.jpg";
-import logo2 from "./logo.jpg";
+// import logo2 from "./logo.jpg";
 import dropdown_icon from "./dropdown_icon.svg";
 import menu_icon from "./menu_icon.svg";
 import cross_icon from "./cross_icon.png";
@@ -44,7 +44,7 @@ export const assets = {
   appointment_img,
   header_img,
   group_profiles,
-  logo2,
+  // logo2,
   LOGO,
   chats_icon,
   verified_icon,
