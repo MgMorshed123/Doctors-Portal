@@ -145,7 +145,7 @@ const AddDoctor = () => {
         {/* Header with Logo */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
-            <img src={assets.logo} className="w-16" alt="HM Medical Logo" />
+            <img src={assets?.LOGO} className="w-16" alt="HM Medical Logo" />
             <h2 className="text-2xl font-semibold text-text-light dark:text-text-dark">
               Add Doctor
             </h2>

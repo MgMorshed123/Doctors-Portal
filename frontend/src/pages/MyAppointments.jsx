@@ -72,7 +72,7 @@ const MyAppointments = () => {
         { headers: { token } }
       );
       if (data.success && data.paymentUrl) {
-        window.location.href = data.paymentUrl;
+        window.open(data.paymentUrl, "_blank");
       } else {
         Swal.fire({ title: data.message, icon: "error" });
       }

@@ -27,6 +27,7 @@ export const HealthPackages = () => {
       const response = await axios.get(
         "https://doctor-for-u-backend.onrender.com/api/health/healthPackages"
       );
+      console.log("response", response);
       if (response.data.success) {
         setHealthPackages(response.data.packages);
         setLoading(false);

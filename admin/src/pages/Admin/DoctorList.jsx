@@ -59,7 +59,7 @@ const DoctorList = () => {
               src={
                 imageErrors[item._id] || !item.image
                   ? defaultAvatar
-                  : item.image
+                  : item?.image
               }
               alt={`Profile of ${item.name || "Unknown"}`}
               onError={() => handleImageError(item._id)}
