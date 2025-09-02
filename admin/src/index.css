@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Outfit, sans-serif;
+}
+
+.active hr {
+  @apply block;
+}
+
+::-webkit-scrollbar {
+  @apply hidden;
+}
+
+/* Button styles for light and dark themes */
+button {
+  @apply bg-primary-light dark:bg-accent-dark text-text-light dark:text-text-dark;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  @apply bg-primary-light/90 dark:bg-accent-dark/90;
+}
+
+/* Glow effect for cards and sections */
+.glow-effect {
+  box-shadow: 0 0 10px rgba(13, 148, 136, 0.5), 0 0 20px rgba(13, 148, 136, 0.3);
+}
+
+.dark .glow-effect {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Global body settings */
+@layer base {
+  body {
+    @apply bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark;
+  }
+
+  /* Optional: handle active states */
+  .active {
+    @apply text-text-light dark:text-text-dark bg-primary-light dark:bg-accent-dark;
+  }
+}
+
+@keyframes borderColorAnimation {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: blue;
+  }
+  100% {
+    border-color: purple;
+  }
+}
+
+.animate-borderColor {
+  animation: borderColorAnimation 2s infinite;
+}
