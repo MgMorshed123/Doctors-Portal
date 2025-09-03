@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const MyAppointments = () => {
   const { token, backendUrl, getDoctorsData } = useContext(AppContext);
   const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(false); // Add loading state
   const months = [
     "Jan",
     "Feb",
@@ -31,6 +32,7 @@ const MyAppointments = () => {
   };
 
   const getUserAppointments = async () => {
+    setLoading(true); // Set loading to true when fetching starts
     try {
       const { data } = await axios.get(
         backendUrl + "/api/user/list-appointment",
@@ -42,10 +44,13 @@ const MyAppointments = () => {
     } catch (error) {
       console.log(error);
       Swal.fire({ title: "Error fetching appointments", icon: "error" });
+    } finally {
+      setLoading(false); // Set loading to false when fetching is done
     }
   };
 
   const cancelAppointment = async (appointmentId) => {
+    setLoading(true); // Optional: Show loader during cancellation
     try {
       const { data } = await axios.post(
         backendUrl + "/api/user/cancel-appointment",
@@ -61,10 +66,13 @@ const MyAppointments = () => {
       }
     } catch (error) {
       Swal.fire({ title: "Error cancelling appointment", icon: "error" });
+    } finally {
+      setLoading(false); // Hide loader after cancellation
     }
   };
 
   const initPay = async (appointmentId) => {
+    setLoading(true); // Optional: Show loader during payment initiation
     try {
       const { data } = await axios.post(
         backendUrl + "/api/user/payment",
@@ -78,6 +86,8 @@ const MyAppointments = () => {
       }
     } catch (error) {
       Swal.fire({ title: "Payment error", icon: "error" });
+    } finally {
+      setLoading(false); // Hide loader after payment attempt
     }
   };
 
@@ -87,6 +97,12 @@ const MyAppointments = () => {
 
   return (
     <div className="py-8 animate-fade-in">
+      {/* Loader */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 dark:bg-opacity-70 z-50">
+          <div className="w-12 h-12 border-4 border-t-4 border-primary-light dark:border-primary-dark border-opacity-50 dark:border-opacity-50 border-t-accent-light dark:border-t-accent-dark rounded-full animate-spin"></div>
+        </div>
+      )}
       <p className="pb-3 text-lg font-medium border-b border-secondary-light dark:border-secondary-dark mb-6">
         My Appointments
       </p>
